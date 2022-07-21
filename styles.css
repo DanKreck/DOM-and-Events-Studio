@@ -18,6 +18,7 @@
 
 #spaceShuttleHeight {
     display: inline-block;
+    
 }
 
 .center-block {
@@ -27,4 +28,8 @@
 
 .centered {
     text-align: center;
+}
+
+#rocket {
+    position: absolute;
 }
