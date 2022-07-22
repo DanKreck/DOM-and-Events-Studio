@@ -49,26 +49,47 @@ window.addEventListener("load", function() {
 
     });
 
+    let currentImgPos = parseInt(rocketNode.style.left);
+    let currentImgHeight = parseInt(rocketNode.style.bottom);
     
+    function move(direction){ 
+        switch (direction) {
+            case "up":
+                currentImgHeight = parseInt(rocketNode.style.bottom);
+                rocketNode.style.bottom = (currentImgHeight + 10) + "px";
+                break;
+            case "down":
+                currentImgHeight = parseInt(rocketNode.style.bottom);
+                rocketNode.style.bottom = (currentImgHeight - 10) + "px";
+                break;
+            case "left": 
+                currentImgPos = parseInt(rocketNode.style.left);
+                rocketNode.style.left = (currentImgPos - 10) + "px";
+                break;
+            case "right":
+                currentImgPos = parseInt(rocketNode.style.left);
+                rocketNode.style.left = (currentImgPos + 10) + "px";
+                break;
+            }     
+    }
+
     upBtn.addEventListener('click', event => {
-        let currentImgHeight = parseInt(rocketNode.style.bottom);
-        rocketNode.style.bottom = (currentImgHeight + 10) + "px";
+        move("up");
     });
     downBtn.addEventListener('click', event => {
-        let currentImgHeight = parseInt(rocketNode.style.bottom);
-        rocketNode.style.bottom = (currentImgHeight - 10) + "px";
-        console.log(rocketNode.style.bottom);
+        move("down");
     });
     leftBtn.addEventListener('click', event => {
-        let currentImgPos = parseInt(rocketNode.style.left);
-        rocketNode.style.left = (currentImgPos - 10) + "px";
-        
-        console.log(rocketNode.style.left);
-
+        move("left");
     });
     rightBtn.addEventListener('click', event => {
-        let currentImgPos = parseInt(rocketNode.style.left);
-        rocketNode.style.left = (currentImgPos + 10) + "px";
-
+        move("right");
     });
+    
+            
+    // rightBtn.addEventListener('click', event => {
+    //     let currentImgPos = parseInt(rocketNode.style.left);
+    //     rocketNode.style.left = (currentImgPos + 10) + "px";
+
+    // });
 });
